@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly — hlídač cen letenek z Prahy</title>
+<style>
+  :root{
+    --ink:#16150f;--soft:#4d4a42;--mute:#83807a;--line:#e5e2db;--line2:#f1efea;
+    --bg:#faf9f6;--card:#fff;--acc:#1f6f5c;--acc-bg:#e9f3f0;
+    --hit:#146c43;--hit-bg:#e6f4ec;--down:#1f6f5c;--up:#9a5b22;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 24px 90px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:28px}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
+    font-weight:600;margin:0 0 8px}
+  h1{font-size:31px;letter-spacing:-.02em;margin:0 0 10px;font-weight:700}
+  .hmeta{font-size:13.5px;color:var(--mute);display:flex;gap:18px;flex-wrap:wrap}
+  .hmeta b{color:var(--soft);font-weight:600}
+
+  .banner{border-radius:12px;padding:20px 24px;margin-bottom:34px}
+  .banner h3{margin:0 0 8px;font-size:17px;font-weight:650}
+  .banner p{margin:0;font-size:15px;color:var(--soft)}
+  .banner ul{margin:0;padding-left:20px}
+  .banner li{margin-bottom:5px;font-size:15px}
+  .banner .kde{color:var(--mute);font-size:13px}
+  .banner.hit{background:var(--hit-bg);border:1px solid #c3e2d1}
+  .banner.hit h3{color:var(--hit)}
+  .banner.klid{background:var(--card);border:1px solid var(--line)}
+
+  .kat{margin-bottom:34px}
+  .kat-hlava{display:flex;justify-content:space-between;align-items:baseline;
+    gap:14px;flex-wrap:wrap;margin-bottom:9px}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);
+    font-weight:700;margin:0}
+  .kat-meta{font-size:13px;color:var(--mute)}
+  .kat-meta b{color:var(--soft)}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14.5px}
+  th{text-align:left;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--mute);font-weight:650;padding:10px 14px;background:#fcfbf9;
+    border-bottom:1px solid var(--line)}
+  td{padding:12px 14px;border-bottom:1px solid var(--line2);vertical-align:middle}
+  tr:last-child td{border-bottom:none}
+  tr.hit td{background:var(--hit-bg)}
+  .kod{color:var(--mute);font-size:12px;font-weight:600;letter-spacing:.04em}
+  .cena{font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap}
+  .termin{color:var(--soft);white-space:nowrap}
+  .noci{display:block;font-size:12px;color:var(--mute)}
+  .prestupy{color:var(--soft);white-space:nowrap}
+  .stav{text-align:right}
+  .badge{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 9px;
+    border-radius:20px;white-space:nowrap;background:var(--line2);color:var(--mute)}
+  .badge.hit{background:#cfe9db;color:var(--hit)}
+  .badge.down{background:var(--acc-bg);color:var(--down)}
+  .badge.up{background:#fbf0e4;color:var(--up)}
+
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:13.5px;color:var(--mute)}
+  footer p{margin:0 0 8px;max-width:72ch}
+
+  @media(max-width:640px){
+    .wrap{padding:32px 16px 60px} h1{font-size:25px}
+    table{font-size:13px} th,td{padding:9px 9px}
+    .termin,.prestupy{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Automatický přehled · odlet z Prahy · zpáteční</p>
+  <h1>Hlídač cen letenek</h1>
+  <div class="hmeta">
+    <span><b>Poslední běh</b> 17. srp 2026, 13:18</span>
+    <span><b>Sledováno</b> 43 destinací</span>
+    <span><b>Sbírá se od</b> 17. srp 2026</span>
+  </div>
+</header>
+
+  <div class="banner hit">
+    <h3>19× stojí za pozornost</h3>
+    <ul><li><b>Řím</b> za 1 298 Kč — pod tvrdým prahem <span class="kde">Evropa — city breaks</span></li><li><b>Kodaň</b> za 1 310 Kč — pod tvrdým prahem <span class="kde">Evropa — city breaks</span></li><li><b>Barcelona</b> za 1 996 Kč — pod tvrdým prahem <span class="kde">Evropa — city breaks</span></li><li><b>Madrid</b> za 2 299 Kč — pod tvrdým prahem <span class="kde">Evropa — city breaks</span></li><li><b>Dublin</b> za 2 301 Kč — pod tvrdým prahem <span class="kde">Evropa — city breaks</span></li><li><b>Agadir</b> za 3 922 Kč — pod tvrdým prahem <span class="kde">Blízký východ a severní Afrika</span></li><li><b>Marrákeš</b> za 4 727 Kč — pod tvrdým prahem <span class="kde">Blízký východ a severní Afrika</span></li><li><b>Tel Aviv</b> za 5 593 Kč — pod tvrdým prahem <span class="kde">Blízký východ a severní Afrika</span></li><li><b>Káhira</b> za 5 606 Kč — pod tvrdým prahem <span class="kde">Blízký východ a severní Afrika</span></li><li><b>Phuket</b> za 10 324 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Dillí</b> za 11 142 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Bangkok</b> za 11 410 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Kolombo</b> za 12 261 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Hanoj</b> za 12 430 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Kuala Lumpur</b> za 12 787 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Soul</b> za 13 135 Kč — pod tvrdým prahem <span class="kde">Asie</span></li><li><b>Maledivy</b> za 14 464 Kč — pod tvrdým prahem <span class="kde">Exotika a ostatní dálkové</span></li><li><b>Mauricius</b> za 16 710 Kč — pod tvrdým prahem <span class="kde">Exotika a ostatní dálkové</span></li><li><b>Kapské Město</b> za 17 224 Kč — pod tvrdým prahem <span class="kde">Exotika a ostatní dálkové</span></li></ul>
+  </div>
+
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Asie</h2>
+      <div class="kat-meta">nejlevněji <b>10 324 Kč</b> · práh 14 000 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="hit">
+        <td class="mesto"><b>Phuket</b> <span class="kod">HKT</span></td>
+        <td class="cena">10 324 Kč</td>
+        <td class="termin">14. zář – 30. zář 2026<span class="noci">16 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Dillí</b> <span class="kod">DEL</span></td>
+        <td class="cena">11 142 Kč</td>
+        <td class="termin">14. říj – 4. lis 2026<span class="noci">21 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Bangkok</b> <span class="kod">BKK</span></td>
+        <td class="cena">11 410 Kč</td>
+        <td class="termin">1. zář – 13. zář 2026<span class="noci">12 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Kolombo</b> <span class="kod">CMB</span></td>
+        <td class="cena">12 261 Kč</td>
+        <td class="termin">14. zář – 1. říj 2026<span class="noci">17 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Hanoj</b> <span class="kod">HAN</span></td>
+        <td class="cena">12 430 Kč</td>
+        <td class="termin">23. zář – 17. říj 2026<span class="noci">24 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Kuala Lumpur</b> <span class="kod">KUL</span></td>
+        <td class="cena">12 787 Kč</td>
+        <td class="termin">7. říj – 21. říj 2026<span class="noci">14 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Soul</b> <span class="kod">ICN</span></td>
+        <td class="cena">13 135 Kč</td>
+        <td class="termin">16. úno – 2. bře 2027<span class="noci">14 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Ho Či Min</b> <span class="kod">SGN</span></td>
+        <td class="cena">14 998 Kč</td>
+        <td class="termin">7. říj – 23. říj 2026<span class="noci">16 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Jižní Amerika</h2>
+      <div class="kat-meta">nejlevněji <b>17 964 Kč</b> · práh 16 000 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="flat">
+        <td class="mesto"><b>Lima</b> <span class="kod">LIM</span></td>
+        <td class="cena">17 964 Kč</td>
+        <td class="termin">26. led – 10. úno 2027<span class="noci">15 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>São Paulo</b> <span class="kod">GRU</span></td>
+        <td class="cena">23 485 Kč</td>
+        <td class="termin">21. zář – 12. říj 2026<span class="noci">21 nocí</span></td>
+        <td class="prestupy">3 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Buenos Aires</b> <span class="kod">EZE</span></td>
+        <td class="cena">24 676 Kč</td>
+        <td class="termin">6. zář – 28. zář 2026<span class="noci">22 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Quito</b> <span class="kod">UIO</span></td>
+        <td class="cena">33 064 Kč</td>
+        <td class="termin">17. pro 2026 – 6. led 2027<span class="noci">20 nocí</span></td>
+        <td class="prestupy">3 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Rio de Janeiro</b> <span class="kod">GIG</span></td>
+        <td class="cena">41 849 Kč</td>
+        <td class="termin">14. pro 2026 – 4. led 2027<span class="noci">21 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Severní Amerika</h2>
+      <div class="kat-meta">nejlevněji <b>11 889 Kč</b> · práh 11 000 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="flat">
+        <td class="mesto"><b>San Francisco</b> <span class="kod">SFO</span></td>
+        <td class="cena">11 889 Kč</td>
+        <td class="termin">1. říj – 11. říj 2026<span class="noci">10 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Newark</b> <span class="kod">EWR</span></td>
+        <td class="cena">11 994 Kč</td>
+        <td class="termin">25. zář – 9. říj 2026<span class="noci">14 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>New York</b> <span class="kod">JFK</span></td>
+        <td class="cena">12 111 Kč</td>
+        <td class="termin">31. srp – 14. zář 2026<span class="noci">14 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Boston</b> <span class="kod">BOS</span></td>
+        <td class="cena">13 136 Kč</td>
+        <td class="termin">24. srp – 3. zář 2026<span class="noci">10 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Los Angeles</b> <span class="kod">LAX</span></td>
+        <td class="cena">13 516 Kč</td>
+        <td class="termin">26. srp – 5. zář 2026<span class="noci">10 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Miami</b> <span class="kod">MIA</span></td>
+        <td class="cena">15 752 Kč</td>
+        <td class="termin">1. říj – 11. říj 2026<span class="noci">10 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Vancouver</b> <span class="kod">YVR</span></td>
+        <td class="cena">16 493 Kč</td>
+        <td class="termin">18. zář – 28. zář 2026<span class="noci">10 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Chicago</b> <span class="kod">ORD</span></td>
+        <td class="cena">17 914 Kč</td>
+        <td class="termin">16. zář – 3. říj 2026<span class="noci">17 nocí</span></td>
+        <td class="prestupy">3 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Exotika a ostatní dálkové</h2>
+      <div class="kat-meta">nejlevněji <b>14 464 Kč</b> · práh 18 000 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="hit">
+        <td class="mesto"><b>Maledivy</b> <span class="kod">MLE</span></td>
+        <td class="cena">14 464 Kč</td>
+        <td class="termin">8. lis – 20. lis 2026<span class="noci">12 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Mauricius</b> <span class="kod">MRU</span></td>
+        <td class="cena">16 710 Kč</td>
+        <td class="termin">13. úno – 8. bře 2027<span class="noci">23 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Kapské Město</b> <span class="kod">CPT</span></td>
+        <td class="cena">17 224 Kč</td>
+        <td class="termin">5. říj – 18. říj 2026<span class="noci">13 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Zanzibar</b> <span class="kod">ZNZ</span></td>
+        <td class="cena">20 148 Kč</td>
+        <td class="termin">29. srp – 10. zář 2026<span class="noci">12 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Seychely</b> <span class="kod">SEZ</span></td>
+        <td class="cena">22 271 Kč</td>
+        <td class="termin">9. říj – 31. říj 2026<span class="noci">22 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Havana</b> <span class="kod">HAV</span></td>
+        <td class="cena">23 889 Kč</td>
+        <td class="termin">4. bře – 18. bře 2027<span class="noci">14 nocí</span></td>
+        <td class="prestupy">3 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Sydney</b> <span class="kod">SYD</span></td>
+        <td class="cena">26 881 Kč</td>
+        <td class="termin">28. pro 2026 – 16. led 2027<span class="noci">19 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Cancún</b> <span class="kod">CUN</span></td>
+        <td class="cena">29 071 Kč</td>
+        <td class="termin">17. srp – 3. zář 2026<span class="noci">17 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Blízký východ a severní Afrika</h2>
+      <div class="kat-meta">nejlevněji <b>3 922 Kč</b> · práh 6 000 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="hit">
+        <td class="mesto"><b>Agadir</b> <span class="kod">AGA</span></td>
+        <td class="cena">3 922 Kč</td>
+        <td class="termin">15. lis – 22. lis 2026<span class="noci">7 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Marrákeš</b> <span class="kod">RAK</span></td>
+        <td class="cena">4 727 Kč</td>
+        <td class="termin">7. zář – 16. zář 2026<span class="noci">9 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Tel Aviv</b> <span class="kod">TLV</span></td>
+        <td class="cena">5 593 Kč</td>
+        <td class="termin">19. říj – 28. říj 2026<span class="noci">9 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Káhira</b> <span class="kod">CAI</span></td>
+        <td class="cena">5 606 Kč</td>
+        <td class="termin">3. říj – 10. říj 2026<span class="noci">7 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Dubaj</b> <span class="kod">DXB</span></td>
+        <td class="cena">6 994 Kč</td>
+        <td class="termin">28. lis – 5. pro 2026<span class="noci">7 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Tunis</b> <span class="kod">TUN</span></td>
+        <td class="cena">7 958 Kč</td>
+        <td class="termin">27. srp – 3. zář 2026<span class="noci">7 nocí</span></td>
+        <td class="prestupy">2 přestupy</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="kat">
+    <div class="kat-hlava">
+      <h2>Evropa — city breaks</h2>
+      <div class="kat-meta">nejlevněji <b>1 298 Kč</b> · práh 2 500 Kč</div>
+    </div>
+    <table>
+      <thead><tr><th>Destinace</th><th>Cena</th><th>Termín</th><th>Spojení</th><th>Stav</th></tr></thead>
+      <tbody>
+      <tr class="hit">
+        <td class="mesto"><b>Řím</b> <span class="kod">FCO</span></td>
+        <td class="cena">1 298 Kč</td>
+        <td class="termin">1. říj – 3. říj 2026<span class="noci">2 noci</span></td>
+        <td class="prestupy">přímý</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Kodaň</b> <span class="kod">CPH</span></td>
+        <td class="cena">1 310 Kč</td>
+        <td class="termin">9. zář – 13. zář 2026<span class="noci">4 noci</span></td>
+        <td class="prestupy">přímý</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Barcelona</b> <span class="kod">BCN</span></td>
+        <td class="cena">1 996 Kč</td>
+        <td class="termin">27. lis – 30. lis 2026<span class="noci">3 noci</span></td>
+        <td class="prestupy">přímý</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Madrid</b> <span class="kod">MAD</span></td>
+        <td class="cena">2 299 Kč</td>
+        <td class="termin">12. zář – 15. zář 2026<span class="noci">3 noci</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="hit">
+        <td class="mesto"><b>Dublin</b> <span class="kod">DUB</span></td>
+        <td class="cena">2 301 Kč</td>
+        <td class="termin">2. říj – 4. říj 2026<span class="noci">2 noci</span></td>
+        <td class="prestupy">přímý</td>
+        <td class="stav"><span class="badge hit">pod tvrdým prahem</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Edinburgh</b> <span class="kod">EDI</span></td>
+        <td class="cena">2 679 Kč</td>
+        <td class="termin">30. říj – 1. lis 2026<span class="noci">2 noci</span></td>
+        <td class="prestupy">přímý</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Porto</b> <span class="kod">OPO</span></td>
+        <td class="cena">3 129 Kč</td>
+        <td class="termin">1. říj – 5. říj 2026<span class="noci">4 noci</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      <tr class="flat">
+        <td class="mesto"><b>Athény</b> <span class="kod">ATH</span></td>
+        <td class="cena">3 219 Kč</td>
+        <td class="termin">12. říj – 17. říj 2026<span class="noci">5 nocí</span></td>
+        <td class="prestupy">1 přestup</td>
+        <td class="stav"><span class="badge flat">beze změny</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+<footer>
+  <p>Ceny pocházejí z databáze reálných vyhledávání Aviasales a mohou být několik dní staré — ber je jako signál, kde se dívat, ne jako závaznou nabídku. Před rezervací je potřeba cenu ověřit u prodejce.</p>
+  <p>Přehled se přepisuje automaticky dvakrát denně. „Reference“ je nejnižší cena, kterou hlídač na dané trase viděl za posledních 90 dní; upozornění chodí, když cena spadne aspoň o 12 % pod ni nebo pod tvrdý práh kategorie.</p>
+</footer>
+
+</div>
+</body>
+</html>
