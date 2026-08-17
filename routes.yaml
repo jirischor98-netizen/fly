@@ -1,0 +1,91 @@
+# Fly — konfigurace hlídání cen letenek
+# Přidání destinace = jeden řádek. Prahy jsou v Kč za zpáteční letenku
+# a jsou zatím odhadem — po prvních týdnech dat je doladíme podle reality.
+
+nastaveni:
+  origin: PRG              # POUZE Praha — odlet z jiného letiště nepřipadá v úvahu
+  mena: CZK
+  typ: zpatecni            # zpatecni | jednosmerne
+  beh: "7:00 a 18:00"
+
+# Profil uživatele: jedna dálková cesta ročně, mimo Evropu, odlet z Prahy.
+# Z toho plyne: dlouhý horizont (klidně 12 měsíců dopředu — je čas počkat na
+# dobrou cenu), delší pobyty, a hlavní váha na dálkových kategoriích.
+# Evropské kategorie jsou zapnuté jen jako doplněk, dají se vypnout (aktivni: false).
+
+kategorie:
+
+  # ---------- DÁLKOVÉ — hlavní zájem ----------
+
+  asie:
+    nazev: "Asie"
+    aktivni: true
+    prah_kc: 14000
+    horizont_mesicu: 12
+    delka_pobytu: [12, 24]
+    priorita: vysoka
+    destinace: [BKK, HKT, NRT, HND, DPS, SGN, HAN, SIN, KUL, ICN, DEL, CMB, KTM]
+
+  jizni_amerika:
+    nazev: "Jižní Amerika"
+    aktivni: true
+    prah_kc: 16000
+    horizont_mesicu: 12
+    delka_pobytu: [14, 24]
+    priorita: vysoka
+    destinace: [GIG, GRU, BOG, LIM, EZE, SCL, MVD, UIO, CUZ]
+
+  severni_amerika:
+    nazev: "Severní Amerika"
+    aktivni: true
+    prah_kc: 11000
+    horizont_mesicu: 12
+    delka_pobytu: [10, 20]
+    priorita: vysoka
+    destinace: [JFK, EWR, BOS, ORD, YYZ, MIA, LAX, SFO, SEA, YVR]
+
+  exotika:
+    nazev: "Exotika a ostatní dálkové"
+    aktivni: true
+    prah_kc: 18000
+    horizont_mesicu: 12
+    delka_pobytu: [12, 24]
+    priorita: vysoka
+    destinace: [MLE, MRU, CPT, JNB, PUJ, CUN, HAV, SEZ, ZNZ, SYD, AKL]
+
+  blizky_vychod:
+    nazev: "Blízký východ a severní Afrika"
+    aktivni: true
+    prah_kc: 6000
+    horizont_mesicu: 9
+    delka_pobytu: [7, 14]
+    priorita: stredni
+    destinace: [DXB, RAK, CAI, AMM, TLV, AGA, TUN, MCT]
+
+  # ---------- EVROPA — doplněk, klidně vypnout ----------
+
+  evropa_city:
+    nazev: "Evropa — city breaks"
+    aktivni: true
+    prah_kc: 2500
+    horizont_mesicu: 4
+    delka_pobytu: [2, 5]
+    priorita: nizka
+    destinace: [LIS, OPO, FCO, CPH, DUB, ATH, BCN, MAD, EDI]
+
+  evropa_hory:
+    nazev: "Evropa — hory a sezóna"
+    aktivni: false
+    prah_kc: 4000
+    horizont_mesicu: 6
+    delka_pobytu: [4, 8]
+    priorita: nizka
+    sezona: [11, 12, 1, 2, 3]
+    destinace: [KEF, TRF, GVA, INN, TRD, SZG]
+
+# Kdy poslat upozornění: musí platit aspoň 2 ze 3 pravidel
+detekce:
+  prah_kategorie: true          # cena pod prah_kc
+  percentil_historie: 10        # cena v nejlevnějších 10 % za posledních 90 dní
+  google_price_level: low       # Google Flights označí cenu jako "low"
+  minimalni_pravidla: 2

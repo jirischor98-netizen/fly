@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+
+# lokální věci, které do veřejného repa nepatří
+_k-nahrani/
+_ukazky/
+fly-koncept.html
+dashboard.html
+.DS_Store

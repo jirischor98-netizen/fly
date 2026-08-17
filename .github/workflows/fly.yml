@@ -1,0 +1,49 @@
+name: Fly
+
+on:
+  schedule:
+    # POZOR: GitHub jede v UTC a neřeší letní čas.
+    # 5:00 a 16:00 UTC = 7:00 a 18:00 našeho času v létě (v zimě 6:00 a 17:00).
+    - cron: "0 5,16 * * *"
+  workflow_dispatch:        # umožní spustit ručně tlačítkem
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fly
+  cancel-in-progress: false
+
+jobs:
+  beh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pyyaml
+
+      - name: Stáhnout ceny
+        env:
+          TP_TOKEN: ${{ secrets.TP_TOKEN }}
+        run: python fetch.py
+
+      - name: Přepočítat baseline
+        run: python build_baseline.py
+
+      - name: Vygenerovat dashboard
+        run: |
+          mkdir -p docs
+          python generate_dashboard.py baseline.json docs/index.html
+
+      - name: Commitnout výsledky
+        run: |
+          git config user.name "fly-bot"
+          git config user.email "fly-bot@users.noreply.github.com"
+          git add data/history.jsonl baseline.json docs/index.html
+          git diff --cached --quiet && echo "beze zmen" && exit 0
+          git commit -m "beh $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git pull --rebase --autostash
+          git push
