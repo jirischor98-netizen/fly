@@ -4,7 +4,7 @@
     "mena": "CZK",
     "typ": "zpatecni",
     "zalozeno": "2026-08-17",
-    "posledni_beh": "2026-11-09T23:57:07+00:00",
+    "posledni_beh": "2026-11-10T13:13:44+00:00",
     "pravidlo_alertu": "cena <= baseline * 0.88  NEBO  cena <= tvrdy_prah",
     "poznamka": "baseline = nejnizsi cena videna za poslednich 90 dni"
   },
@@ -171,22 +171,12 @@
         {
           "kod": "MIA",
           "mesto": "Miami",
-          "cena": 16360,
-          "odlet": "2026-12-01",
-          "navrat": "2026-12-14",
+          "cena": 16423,
+          "odlet": "2027-03-05",
+          "navrat": "2027-03-19",
           "prestupy": 1,
           "baseline": 13356,
-          "link": "/search/PRG0112MIA14121?t=LO17961480001796232900001775PRGWAWMIA17972769001797371100001210MIAWAWPRG_c65b71eae2f834e137c3e342b81132bd_61294&search_date=03112026&expected_price_uuid=01a1a0c7-287c-8030-2e4e-b61fc69574cf&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=rAshjrX38gM1Cfb-VYUFRw&expected_price_source=share&expected_price_currency=czk&expected_price=16360"
-        },
-        {
-          "kod": "SFO",
-          "mesto": "San Francisco",
-          "cena": 16800,
-          "odlet": "2026-11-10",
-          "navrat": "2026-11-30",
-          "prestupy": 1,
-          "baseline": 11708,
-          "link": "/search/PRG1011SFO30111?t=SK17943063001794322200000805PRGCPHSFO17960571001796135400000765SFOCPHPRG_fd721633e0e9e23520d98ed1d2c701c9_63917&search_date=09112026&expected_price_uuid=01a1c15f-40c5-8030-2de6-ad14919a862e&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=DVCsJuHfnZjn7N_GnuoNZg&expected_price_source=share&expected_price_currency=czk&expected_price=16800"
+          "link": "/search/PRG0503MIA19031?t=LO18042393001804268100000840PRGWAWMIA18054885001805562900000940MIAWAWPRG_b28087aa5505915d4ebcb756e26a66b1_62164&search_date=04112026&expected_price_uuid=01a1a5d4-1c68-8030-a2f9-b16c47a41cc9&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=o81vqGqK_gsCt4XG7J92kA&expected_price_source=share&expected_price_currency=czk&expected_price=16423"
         },
         {
           "kod": "YYZ",
@@ -197,6 +187,16 @@
           "prestupy": 1,
           "baseline": 12188,
           "link": "/search/PRG1912YYZ08011?t=DE17976672001797688200000710PRGFRAYYZ17994240001799492100000775YYZFRAPRG_92739d27774870a35fb7e698c63c8aba_67198&search_date=09112026&expected_price_uuid=01a1be20-eac4-8030-a652-84042b21e5a6&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=nTR8-PbaLqabR_rs5uPtDQ&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=17782"
+        },
+        {
+          "kod": "SFO",
+          "mesto": "San Francisco",
+          "cena": 17834,
+          "odlet": "2026-11-12",
+          "navrat": "2026-11-28",
+          "prestupy": 1,
+          "baseline": 11708,
+          "link": "/search/PRG1211SFO28111?t=TP17945109001794585900001790PRGLISSFO17958837001796038800002045SFOLISPRG_5442c2d3e5ad45dd7a05692c83dedbf3_66917&search_date=08112026&expected_price_uuid=01a1bc88-6fc3-8031-68b9-fe93b22dbe29&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=I-xyH9kvGdvXZR4f4WYg8g&expected_price_source=share&expected_price_currency=czk&expected_price=17834"
         },
         {
           "kod": "ORD",
@@ -392,12 +392,12 @@
         {
           "kod": "BCN",
           "mesto": "Barcelona",
-          "cena": 1823,
+          "cena": 1719,
           "odlet": "2027-01-22",
           "navrat": "2027-01-25",
           "prestupy": 0,
           "baseline": 1564,
-          "link": "/search/PRG2201BCN25011?t=VY18006516001800660600000150PRGBCN18009138001800922800000150BCNPRG_244cdbd0c72bbfd89bf817da31693206_6830&search_date=03112026&expected_price_uuid=01a1a0f2-fa6b-8031-2d86-3b47fa549b74&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=d2fn-1oSRrVZWX1Rc_7kWw&expected_price_source=share&expected_price_currency=czk&expected_price=1823"
+          "link": "/search/PRG2201BCN25011?t=VY18006516001800660600000150PRGBCN18009138001800922800000150BCNPRG_244cdbd0c72bbfd89bf817da31693206_6538&search_date=09112026&expected_price_uuid=01a1c29a-2275-8031-2643-246d067e8f8e&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=d2fn-1oSRrVZWX1Rc_7kWw&expected_price_source=share&expected_price_currency=czk&expected_price=1719"
         },
         {
           "kod": "CPH",
