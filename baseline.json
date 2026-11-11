@@ -4,7 +4,7 @@
     "mena": "CZK",
     "typ": "zpatecni",
     "zalozeno": "2026-08-17",
-    "posledni_beh": "2026-11-10T21:38:19+00:00",
+    "posledni_beh": "2026-11-11T12:24:56+00:00",
     "pravidlo_alertu": "cena <= baseline * 0.88  NEBO  cena <= tvrdy_prah",
     "poznamka": "baseline = nejnizsi cena videna za poslednich 90 dni"
   },
@@ -15,6 +15,16 @@
       "tvrdy_prah": 14000,
       "destinace": [
         {
+          "kod": "HKT",
+          "mesto": "Phuket",
+          "cena": 11793,
+          "odlet": "2027-01-19",
+          "navrat": "2027-02-03",
+          "prestupy": 1,
+          "baseline": 4709,
+          "link": "/search/PRG1901HKT03021?t=G918003624001800440100000935PRGSHJHKT18016788001801741200001400HKTSHJPRG_5b8f6b24868d75435f2875efc5f38c49_44843&search_date=11112026&expected_price_uuid=01a1c93d-8c00-8031-2ee8-30747c918665&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=4KX_YrlTzG4YAQ2itJswmg&expected_price_source=share&expected_price_currency=czk&expected_price=11793"
+        },
+        {
           "kod": "BKK",
           "mesto": "Bangkok",
           "cena": 11942,
@@ -23,16 +33,6 @@
           "prestupy": 1,
           "baseline": 10212,
           "link": "/search/PRG0112BKK14121?t=G917961288001796231100001345PRGSHJBKK17972364001797281700001115BKKSHJPRG_210d6dc32fd35bde01b5453bddb2228a_45431&search_date=09112026&expected_price_uuid=01a1c202-185d-8031-6168-61839af96717&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=6FNiRGub0XphlzDEdxDtJQ&expected_price_source=share&expected_price_currency=czk&expected_price=11942"
-        },
-        {
-          "kod": "HKT",
-          "mesto": "Phuket",
-          "cena": 12148,
-          "odlet": "2026-12-02",
-          "navrat": "2026-12-14",
-          "prestupy": 1,
-          "baseline": 4709,
-          "link": "/search/PRG0212HKT14121?t=G917962485001796318400000805PRGSHJHKT17972391001797281700001070HKTSHJPRG_32ba5631d91fc8f3ea6667496efc9cfe_45849&search_date=05112026&expected_price_uuid=01a1ab20-5319-8030-21fb-98502b495645&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=3g6MqA5pcnyfuxjOVoRHdA&expected_price_source=share&expected_price_currency=czk&expected_price=12148"
         },
         {
           "kod": "DEL",
@@ -57,22 +57,22 @@
         {
           "kod": "CMB",
           "mesto": "Kolombo",
-          "cena": 14223,
+          "cena": 14219,
           "odlet": "2027-03-28",
           "navrat": "2027-04-10",
           "prestupy": 1,
           "baseline": 11209,
-          "link": "/search/PRG2803CMB10041?t=G918062397001806329700001290PRGSHJCMB18073695001807446300001490CMBSHJPRG_2ac841a58713d827aae3f15946f93241_53931&search_date=10112026&expected_price_uuid=01a1c4e9-4539-8030-6fd9-da8e7c1fcae9&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=aO7-Y7KZ-Gy7Gvh4rU7N0w&expected_price_source=share&expected_price_currency=czk&expected_price=14223"
+          "link": "/search/PRG2803CMB10041?t=G918062397001806329700001290PRGSHJCMB18073695001807446300001490CMBSHJPRG_2ac841a58713d827aae3f15946f93241_53931&search_date=10112026&expected_price_uuid=01a1c4e9-4539-8030-6fd9-da8e7c1fcae9&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=aO7-Y7KZ-Gy7Gvh4rU7N0w&expected_price_source=share&expected_price_currency=czk&expected_price=14219"
         },
         {
           "kod": "SIN",
           "mesto": "Singapur",
-          "cena": 14744,
+          "cena": 14657,
           "odlet": "2026-11-24",
           "navrat": "2026-12-08",
           "prestupy": 1,
           "baseline": 14309,
-          "link": "/search/PRG2411SIN08121?t=TK17955126001795600800001050PRGISTSIN17967717001796805300000980SINISTPRG_2e46c183bd499b23bc914f0a960e16e0_55320&search_date=08112026&expected_price_uuid=01a1bb47-45c6-8030-aee4-bf04c99e49ce&static_fare_key=TY%7CP1%7CH1%7CL1_1_20%7CCH0%7CR0%7CTBC1&itinerary_key=uP88sKGFuNIkpfV-wxnXmw&expected_price_source=share&expected_price_currency=czk&expected_price=14744"
+          "link": "/search/PRG2411SIN08121?t=TK17955126001795600800001050PRGISTSIN17967717001796805300000980SINISTPRG_2e46c183bd499b23bc914f0a960e16e0_55731&search_date=11112026&expected_price_uuid=01a1c8f7-f4f4-8031-65bd-1253994b108b&static_fare_key=TY%7CP1%7CH1%7CL1_1_20%7CCH0%7CR0%7CTBC1&itinerary_key=uP88sKGFuNIkpfV-wxnXmw&expected_price_source=share&expected_price_currency=czk&expected_price=14657"
         },
         {
           "kod": "ICN",
@@ -120,16 +120,6 @@
           "prestupy": 3,
           "baseline": 22721,
           "link": "/search/PRG0502GIG20021?t=TP18018567001801958340001934PRGCIAFCOLISGRUGIG18031491001803228600001085GIGVCPMADPRG_3e10d4f79bf77c4f99fe226313661308_100683&search_date=04112026&expected_price_uuid=01a1a709-79bf-8030-69bb-d30a2d23096f&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=OOEipyUAtOhjYo4foIIyqw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=26582"
-        },
-        {
-          "kod": "EZE",
-          "mesto": "Buenos Aires",
-          "cena": 39373,
-          "odlet": "2026-12-12",
-          "navrat": "2026-12-27",
-          "prestupy": 2,
-          "baseline": 19235,
-          "link": "/search/PRG1212EZE27121?t=LA17971110001797210900001905PRGBCNGRUEZE17983908001798495800001510EZEGRUFRAPRG_f49ba2b54b8f8e746b61a5ba670bef01_148814&search_date=04112026&expected_price_uuid=01a1a568-ff8f-8030-a298-5fdd899762e0&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=VoWA6BRBld7-WHZvfdnlrg&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=39373"
         }
       ]
     },
@@ -147,6 +137,16 @@
           "prestupy": 1,
           "baseline": 8058,
           "link": "/search/PRG0103EWR12031?t=TP18039042001803939000000940PRGLISEWR18048102001804938000001770EWRLISPRG_880a81b9f076a36ebf0c287eafa40b3c_45167&search_date=08112026&expected_price_uuid=01a1b8d3-7cbd-8030-e3d8-4eef72f452c2&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=j-cxgZoi4DJE99vAbjoQlw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=12038"
+        },
+        {
+          "kod": "SFO",
+          "mesto": "San Francisco",
+          "cena": 12366,
+          "odlet": "2027-02-09",
+          "navrat": "2027-02-23",
+          "prestupy": 1,
+          "baseline": 11708,
+          "link": "/search/PRG0902SFO23021?t=AA18021549001802184900001040PRGLHRSFO18034035001803490500000910SFOLHRPRG_6a7716ddc1ca9489f128230b1da0e462_46868&search_date=11112026&expected_price_uuid=01a1c9bd-f3bb-8030-69fc-8e6e4ca13919&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=rig6Bq48z-ejz_xtT5ETwA&expected_price_source=share&expected_price_currency=czk&expected_price=12366"
         },
         {
           "kod": "LAX",
@@ -171,12 +171,12 @@
         {
           "kod": "MIA",
           "mesto": "Miami",
-          "cena": 16423,
-          "odlet": "2027-03-05",
-          "navrat": "2027-03-19",
+          "cena": 17395,
+          "odlet": "2027-03-01",
+          "navrat": "2027-03-12",
           "prestupy": 1,
           "baseline": 13356,
-          "link": "/search/PRG0503MIA19031?t=LO18042393001804268100000840PRGWAWMIA18054885001805562900000940MIAWAWPRG_b28087aa5505915d4ebcb756e26a66b1_62164&search_date=04112026&expected_price_uuid=01a1a5d4-1c68-8030-a2f9-b16c47a41cc9&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=o81vqGqK_gsCt4XG7J92kA&expected_price_source=share&expected_price_currency=czk&expected_price=16423"
+          "link": "/search/PRG0103MIA12031?t=TP18039042001803999000001940PRGLISMIA18048699001804938000000775MIALISPRG_7da46718bc9f86eb12745fc9979ced42_65268&search_date=08112026&expected_price_uuid=01a1b8d3-6ef2-8030-a842-72b2d640352e&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=5uywknCoqsNx-OPguymRKA&expected_price_source=share&expected_price_currency=czk&expected_price=17395"
         },
         {
           "kod": "YYZ",
@@ -189,26 +189,6 @@
           "link": "/search/PRG1912YYZ08011?t=DE17976672001797688200000710PRGFRAYYZ17994240001799492100000775YYZFRAPRG_92739d27774870a35fb7e698c63c8aba_67198&search_date=09112026&expected_price_uuid=01a1be20-eac4-8030-a652-84042b21e5a6&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=nTR8-PbaLqabR_rs5uPtDQ&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=17782"
         },
         {
-          "kod": "SFO",
-          "mesto": "San Francisco",
-          "cena": 17834,
-          "odlet": "2026-11-12",
-          "navrat": "2026-11-28",
-          "prestupy": 1,
-          "baseline": 11708,
-          "link": "/search/PRG1211SFO28111?t=TP17945109001794585900001790PRGLISSFO17958837001796038800002045SFOLISPRG_5442c2d3e5ad45dd7a05692c83dedbf3_66917&search_date=08112026&expected_price_uuid=01a1bc88-6fc3-8031-68b9-fe93b22dbe29&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=I-xyH9kvGdvXZR4f4WYg8g&expected_price_source=share&expected_price_currency=czk&expected_price=17834"
-        },
-        {
-          "kod": "ORD",
-          "mesto": "Chicago",
-          "cena": 18188,
-          "odlet": "2027-03-17",
-          "navrat": "2027-03-31",
-          "prestupy": 2,
-          "baseline": 16668,
-          "link": "/search/PRG1703ORD31031?t=UA18053112001805394000001740PRGCPHKEFORD18065162401806595800000906ORDIADMUCPRG_5a4691a3fd38531a5d613faaaabfadc6_68846&search_date=04112026&expected_price_uuid=01a1a5e3-8ade-8031-2d49-457af6c9cbde&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=hM2URjNyMKJCiCGfDLfqkw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=czk&expected_price=18188"
-        },
-        {
           "kod": "BOS",
           "mesto": "Boston",
           "cena": 18194,
@@ -217,6 +197,16 @@
           "prestupy": 2,
           "baseline": 12497,
           "link": "/search/PRG1912BOS03011?t=TP17977077001797798600001875PRGLISOPOBOS17990166001799173500002255BOSOPOLISPRG_2c0a46241fae39480e76feb3f54cd4b8_69219&search_date=09112026&expected_price_uuid=01a1c28e-d3d9-8030-a178-daca11613d64&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ZED8n6CNRX4ru0uimGYWsQ&expected_price_source=share&expected_price_currency=czk&expected_price=18194"
+        },
+        {
+          "kod": "SEA",
+          "mesto": "Seattle",
+          "cena": 19341,
+          "odlet": "2026-12-24",
+          "navrat": "2027-01-04",
+          "prestupy": 3,
+          "baseline": 10947,
+          "link": "/search/PRG2412SEA04011?t=FI17980920001798131600001200PRGAMSLHRKEFSEA17990733001799186400001345SEAKEFLGWPRG_54990ee18a3bfba979cd549b0776d751_72569&search_date=08112026&expected_price_uuid=01a1bc9c-f7ea-8030-2750-4ccdd114f83f&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=an_JwO9QjFwENr1grm-I2A&expected_price_source=share&expected_price_currency=czk&expected_price=19341"
         }
       ]
     },
@@ -228,12 +218,12 @@
         {
           "kod": "SEZ",
           "mesto": "Seychely",
-          "cena": 12975,
+          "cena": 14047,
           "odlet": "2026-12-11",
           "navrat": "2026-12-26",
           "prestupy": 1,
           "baseline": 11896,
-          "link": "/search/PRG1112SEZ26121?t=DE17969895001797053700000890PRGFRASEZ17983278001798405800001480SEZFRAPRG_5c3a45213771eb34414a57064be93434_48685&search_date=08112026&expected_price_uuid=01a1ba95-6f05-8031-2624-067d0f3aa1b2&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=PDTMB4vd-WUjwQNHcS5T0w&expected_price_source=share&expected_price_currency=czk&expected_price=12975"
+          "link": "/search/PRG1112SEZ26121?t=DE17969895001797053700000890PRGFRASEZ17983278001798405800001480SEZFRAPRG_5c3a45213771eb34414a57064be93434_53189&search_date=11112026&expected_price_uuid=01a1ca83-d948-8031-62b0-7069072e690f&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=PDTMB4vd-WUjwQNHcS5T0w&expected_price_source=share&expected_price_currency=czk&expected_price=14047"
         },
         {
           "kod": "MRU",
@@ -268,12 +258,12 @@
         {
           "kod": "CUN",
           "mesto": "Cancún",
-          "cena": 20447,
+          "cena": 20162,
           "odlet": "2027-02-18",
           "navrat": "2027-03-08",
-          "prestupy": 1,
+          "prestupy": 2,
           "baseline": 17085,
-          "link": "/search/PRG1802CUN08031?t=DE18029376001802973900000965PRGFRACUN18045381001804606200000775CUNFRAPRG_1b81952e85c8362e0b8f1f6d12fb72d3_76721&search_date=08112026&expected_price_uuid=01a1bb3f-b69d-8040-2afb-29e9876e9020&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ROxRFNwEOTIgAo-Kn3Kwog&expected_price_source=share&expected_price_currency=czk&expected_price=20447"
+          "link": "/search/PRG1802CUN08031?t=AV18029652001803123000002990PRGMADMDECUN18045291001804716300002760CUNYYCLHRLTNPRG_4af245ca8fd6b4d00928d517134b49df_76415&search_date=11112026&expected_price_uuid=01a1c9e0-b828-8040-205a-0ad7da998d7a&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=kr82ifKZObqEFFoiJuyWRw&expected_price_source=share&expected_price_currency=czk&expected_price=20162"
         },
         {
           "kod": "CPT",
@@ -335,12 +325,12 @@
         {
           "kod": "CAI",
           "mesto": "Káhira",
-          "cena": 5894,
-          "odlet": "2027-01-16",
-          "navrat": "2027-01-23",
+          "cena": 5963,
+          "odlet": "2026-11-18",
+          "navrat": "2026-11-25",
           "prestupy": 1,
           "baseline": 4187,
-          "link": "/search/PRG1601CAI23011?t=PC18001089001800146100000560PRGSAWSPX18007467001800792900000830CAIATHPRG_f2cb3f299ed0de7e6e32f80cc432b1bb_22345&search_date=04112026&expected_price_uuid=01a1a603-7355-8030-2439-e7996dc069c3&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=9TJR1KBk5fflnjy7-iTOBQ&expected_price_source=share&expected_price_currency=czk&expected_price=5894"
+          "link": "/search/PRG1811CAI25111?t=PC17950119001795048500000550PRGSAWSPX17955780001795599300000415SPXSAWPRG_f216df09df69559ed32786ae0da5ea39_22654&search_date=10112026&expected_price_uuid=01a1c60f-61da-8030-e166-63763ab446c7&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=3PsyUH8lEXPFyh1-LCWg4g&expected_price_source=share&expected_price_currency=czk&expected_price=5963"
         },
         {
           "kod": "DXB",
@@ -392,12 +382,12 @@
         {
           "kod": "BCN",
           "mesto": "Barcelona",
-          "cena": 1719,
+          "cena": 1735,
           "odlet": "2027-01-22",
           "navrat": "2027-01-25",
           "prestupy": 0,
           "baseline": 1564,
-          "link": "/search/PRG2201BCN25011?t=VY18006516001800660600000150PRGBCN18009138001800922800000150BCNPRG_244cdbd0c72bbfd89bf817da31693206_6538&search_date=09112026&expected_price_uuid=01a1c29a-2275-8031-2643-246d067e8f8e&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=d2fn-1oSRrVZWX1Rc_7kWw&expected_price_source=share&expected_price_currency=czk&expected_price=1719"
+          "link": "/search/PRG2201BCN25011?t=VY18006516001800660600000150PRGBCN18008991001800907800000145BCNPRG_3563b635a02d4f022660cc3f37810361_6596&search_date=11112026&expected_price_uuid=01a1c933-b1bc-8031-2658-0e09394f5549&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=gFvDA0nv-ddtkmCrZmpNNA&expected_price_source=share&expected_price_currency=czk&expected_price=1735"
         },
         {
           "kod": "CPH",
@@ -420,6 +410,16 @@
           "link": "/search/PRG0302MAD07021?t=FR18016629001801674000000185PRGMAD18020259001802036700000180MADPRG_74da2e3b10349151fea7e801cc943b6c_8615&search_date=05112026&expected_price_uuid=01a1acf6-55a2-8030-2256-a47ba3ab75b4&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Q31mtSJOlA7-h6OhbSbQqA&expected_price_source=share&expected_price_currency=czk&expected_price=2291"
         },
         {
+          "kod": "LIS",
+          "mesto": "Lisabon",
+          "cena": 2734,
+          "odlet": "2027-01-16",
+          "navrat": "2027-01-19",
+          "prestupy": 1,
+          "baseline": 2549,
+          "link": "/search/PRG1601LIS19011?t=FR18001242001800177000000940PRGSTNLIS18003555001800436500001290LISBGYPRG_8f0a4179015250307efce147e7a923f0_10353&search_date=11112026&expected_price_uuid=01a1ca44-a4dd-8031-6a88-8e3e1ecac272&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=DaK5KQZv_eyrwKI9EdIW3g&expected_price_source=share&expected_price_currency=czk&expected_price=2734"
+        },
+        {
           "kod": "DUB",
           "mesto": "Dublin",
           "cena": 2852,
@@ -428,16 +428,6 @@
           "prestupy": 1,
           "baseline": 1486,
           "link": "/search/PRG0502DUB08021?t=FR18018330001801907400001300PRGTIADUB18021114001802123700000145DUBPRG_63e4b14b91d942c80dc1f043d90cde85_10701&search_date=08112026&expected_price_uuid=01a1bac8-980a-8030-ee46-15bd2ad5075f&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=X1hI3k5x8aYlpH_b6yPrRg&expected_price_source=share&expected_price_currency=czk&expected_price=2852"
-        },
-        {
-          "kod": "LIS",
-          "mesto": "Lisabon",
-          "cena": 2853,
-          "odlet": "2027-01-27",
-          "navrat": "2027-02-01",
-          "prestupy": 1,
-          "baseline": 2549,
-          "link": "/search/PRG2701LIS01021?t=FR18010296001801085400000990PRGBGYLIS18015150001801558200000660LISBGYPRG_699576bf651830b41bccaf4361aaf70e_10706&search_date=07112026&expected_price_uuid=01a1b829-26b7-8040-23df-6c8e7b32ea0d&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=5RQeJ-Ny_Ze3To2bnYE8JA&expected_price_source=share&expected_price_currency=czk&expected_price=2853"
         },
         {
           "kod": "ATH",
